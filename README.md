@@ -2,7 +2,7 @@
 
 Kongnamul is a JavaScript library for building user interfaces.
 
-<img src="./docs/assets/icon.png" width="320">
+<img src="./assets/icon.png" width="320">
 
 ## Roadmap
 
@@ -18,5 +18,3 @@ See the link below for details.
 - [pintos](https://casys-kaist.github.io/pintos-kaist/)
 
 ---
-
-영어가 이상해?
