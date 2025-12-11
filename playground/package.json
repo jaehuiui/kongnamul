@@ -1,0 +1,17 @@
+{
+  "name": "playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@cilantro/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@jaehuiui/prettier-config": "catalog:",
+    "prettier": "catalog:",
+    "vite": "^5.4.21"
+  },
+  "prettier": "@jaehuiui/prettier-config"
+}
