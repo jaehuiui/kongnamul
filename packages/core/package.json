@@ -1,0 +1,15 @@
+{
+  "name": "@kongnamul/core",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "devDependencies": {
+    "@jaehuiui/prettier-config": "catalog:",
+    "prettier": "catalog:"
+  },
+  "prettier": "@jaehuiui/prettier-config"
+}
