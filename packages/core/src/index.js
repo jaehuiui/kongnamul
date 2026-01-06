@@ -1,4 +1,33 @@
-export function render(schema, container) {
+let container = null
+let createSchema = null
+
+function createState(initialState) {
+  let state = initialState
+
+  return {
+    get: () => state,
+    set: nextState => {
+      state = nextState
+      updateDOM()
+    },
+  }
+}
+
+function mount(_createSchema, _container) {
+  createSchema = _createSchema
+  container = _container
+
+  updateDOM()
+}
+
+function updateDOM() {
+  container.innerHTML = ''
+
+  const schema = createSchema()
+  render(schema, container)
+}
+
+function render(schema, container) {
   // Leaf Node: create text node
   if (typeof schema === 'string') {
     const textNode = document.createTextNode(schema)
@@ -34,3 +63,5 @@ export function render(schema, container) {
   // Element: connect to DOM dynamically
   container.appendChild(el)
 }
+
+export { createState, mount }
