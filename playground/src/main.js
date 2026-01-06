@@ -1,27 +1,33 @@
-import { render } from '@kongnamul/core'
+import { mount, createState } from '@kongnamul/core'
 
-const schema = {
-  type: 'div',
-  props: {
-    id: 'container',
-  },
-  children: [
-    {
-      type: 'h1',
-      props: {
-        id: 'title',
-      },
-      children: ['Do you know kongnamul?'],
+const like = createState(0)
+
+function schema() {
+  return {
+    type: 'div',
+    props: {
+      id: 'container',
     },
-    {
-      type: 'p',
-      props: {
-        id: 'description',
+    children: [
+      {
+        type: 'h1',
+        props: {
+          id: 'title',
+        },
+        children: [`People who like kongnamul: ${like.get()}`],
       },
-      children: ['I like it'],
-    },
-  ],
+      {
+        type: 'button',
+        props: {
+          onClick: () => {
+            like.set(like.get() + 1)
+          },
+        },
+        children: ['Click me'],
+      },
+    ],
+  }
 }
 
 const container = document.getElementById('app')
-render(schema, container)
+mount(schema, container)
