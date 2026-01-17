@@ -28,7 +28,6 @@ export type Props = {
   [key: string]: string | EventHandler
 }
 
-
 /**
  * DOM 노드 타입 (Text 또는 Element)
  */
