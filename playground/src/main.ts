@@ -1,10 +1,10 @@
-import { mount, createState, debug } from '@kongnamul/core'
+import { createState, mount, debug, type Schema } from '@kongnamul/core'
 
 debug()
 
-const like = createState(0)
+const like = createState<number>(0)
 
-function schema() {
+function schema(): Schema {
   return {
     type: 'div',
     props: {
@@ -31,5 +31,9 @@ function schema() {
   }
 }
 
-const container = document.getElementById('app')
+const container = document.getElementById('app')!
+if (!container) {
+  throw new Error('Container element not found')
+}
+
 mount(schema, container)

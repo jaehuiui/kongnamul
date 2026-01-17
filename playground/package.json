@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@kongnamul/core": "workspace:*"
@@ -11,7 +12,8 @@
   "devDependencies": {
     "@jaehuiui/prettier-config": "catalog:",
     "prettier": "catalog:",
-    "vite": "^5.4.21"
+    "typescript": "catalog:",
+    "vite": "catalog:"
   },
   "prettier": "@jaehuiui/prettier-config"
 }

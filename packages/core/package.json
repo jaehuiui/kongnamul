@@ -1,15 +1,47 @@
 {
   "name": "@kongnamul/core",
-  "private": true,
-  "type": "module",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "ui",
+    "schema",
+    "dom",
+    "renderer"
+  ],
+  "author": "jaehuiui",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaehuiui/kongnamul"
   },
   "devDependencies": {
     "@jaehuiui/prettier-config": "catalog:",
-    "prettier": "catalog:"
+    "@types/node": "^22.10.5",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "^4.3.0"
   },
   "prettier": "@jaehuiui/prettier-config"
 }
