@@ -1,4 +1,6 @@
-import { mount, createState } from '@kongnamul/core'
+import { mount, createState, debug } from '@kongnamul/core'
+
+debug()
 
 const like = createState(0)
 
